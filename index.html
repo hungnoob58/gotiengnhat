@@ -285,7 +285,17 @@
         </div>
 
         <div class="input-group" style="margin-top: 8px;">
-            <input type="text" id="userInput" placeholder="Gõ bằng bàn phím Nhật..." autocomplete="off" autocapitalize="off" spellcheck="false">
+            <!-- ĐÃ CHỈNH SỬA TẮT TỰ ĐỘNG LƯU / DỰ ĐOÁN TỪ CỦA BÀN PHÍM -->
+            <input 
+                type="text" 
+                id="userInput" 
+                placeholder="Gõ bằng bàn phím Nhật..." 
+                autocomplete="off" 
+                autocorrect="off" 
+                autocapitalize="none" 
+                spellcheck="false"
+                data-lpignore="true"
+            >
             <div class="tip-text">💡 Dùng bàn phím Kana/Romaji Tiếng Nhật để gõ.</div>
         </div>
     </div>
