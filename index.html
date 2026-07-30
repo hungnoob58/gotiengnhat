@@ -2,24 +2,20 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-    <title>Luyện Gõ N5 Full Kho Từ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luyện Gõ N5 Full Option</title>
 
-    <!-- Cấu hình Web App (PWA) chuẩn cho iPhone -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Luyện Gõ N5">
-    <link rel="apple-touch-icon" href="https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg>
+    <!-- ICON MÀN HÌNH CHÍNH IPHONE / FAVICON -->
+    <link rel="apple-touch-icon" href="https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg">
+    <link rel="icon" type="image/jpeg" href="https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg">
 
     <style>
         :root {
             --bg-color: #f2f2f7;
             --card-bg: #ffffff;
             --primary: #007aff;
-            --secondary: #5856d6;
             --text-dark: #1c1c1e;
             --text-muted: #8e8e93;
-            --success: #34c759;
             --danger: #ff3b30;
             --warning: #ff9500;
         }
@@ -28,74 +24,51 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
+            background-color: var(--bg-color);
             color: var(--text-dark);
             display: flex;
             justify-content: center;
-            align-items: flex-start;
             padding: 12px;
         }
 
         .app-container {
             width: 100%;
             max-width: 400px;
-            margin: 0 auto;
             background-color: var(--card-bg);
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             padding: 16px;
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .app-header {
-            text-align: center;
-        }
-
         .app-banner {
             width: 100%;
-            height: 90px;
+            height: 140px;
             object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 6px;
-            background-color: #e5e5ea;
+            margin-bottom: 8px;
         }
 
         h1 {
             font-size: 20px;
             color: var(--primary);
-            font-weight: 700;
+            text-align: center;
         }
 
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        select {
+        .controls select {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
+            margin-top: 6px;
             border-radius: 10px;
             border: 1px solid #d1d1d6;
             background-color: #f2f2f7;
             font-size: 14px;
-            color: var(--text-dark);
-            outline: none;
-            -webkit-appearance: none;
         }
 
         .stats-bar {
@@ -103,28 +76,19 @@
             justify-content: space-around;
             background: #f8f9fa;
             border: 1px solid #e5e5ea;
-            padding: 10px;
+            padding: 8px;
             border-radius: 12px;
             text-align: center;
         }
 
-        .stat-item .label {
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .stat-item .value {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
+        .stat-item .label { font-size: 10px; color: var(--text-muted); }
+        .stat-item .value { font-size: 18px; font-weight: bold; }
         #timer { color: var(--danger); }
         #combo { color: var(--warning); }
         #score { color: var(--primary); }
 
         .card {
-            background: #ffffff;
+            background: #fff;
             border: 1px solid #e5e5ea;
             border-radius: 16px;
             padding: 12px;
@@ -136,38 +100,15 @@
         }
 
         .word-image {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 10px;
-            background-color: #f2f2f7;
         }
 
-        .japanese-text {
-            font-size: 26px;
-            font-weight: bold;
-            color: var(--text-dark);
-            line-height: 1.2;
-            -webkit-user-select: text;
-            user-select: text;
-        }
-
-        .romaji-text {
-            font-size: 13px;
-            color: var(--text-muted);
-        }
-
-        .meaning-text {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+        .japanese-text { font-size: 24px; font-weight: bold; }
+        .romaji-text { font-size: 13px; color: var(--text-muted); }
+        .meaning-text { font-size: 13px; color: var(--primary); }
 
         input[type="text"] {
             width: 100%;
@@ -175,25 +116,15 @@
             font-size: 18px;
             border: 2px solid #d1d1d6;
             border-radius: 12px;
+            text-align: center;
             outline: none;
-            text-align: center;
-            -webkit-user-select: text;
-            user-select: text;
         }
 
-        input[type="text"]:focus {
-            border-color: var(--primary);
-        }
-
-        .tip-text {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-align: center;
-        }
+        input[type="text"]:focus { border-color: var(--primary); }
 
         button {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             font-size: 16px;
             font-weight: bold;
             color: white;
@@ -203,121 +134,77 @@
             cursor: pointer;
         }
 
-        button:active {
-            opacity: 0.8;
-        }
+        button.danger { background-color: var(--danger); }
+        .hidden { display: none !important; }
 
-        button.danger {
-            background-color: var(--danger);
+        /* RANK DISPLAY */
+        .rank-badge {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
         }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .result-screen {
-            text-align: center;
-            padding: 16px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .result-image {
-            width: 70px;
-            height: 70px;
-        }
-
-        .grade-badge {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--success);
-        }
+        .rank-S { color: #ff2d55; }
+        .rank-A { color: #5856d6; }
+        .rank-B { color: #007aff; }
+        .rank-C { color: #34c759; }
+        .rank-D { color: #ff9500; }
+        .rank-F { color: #8e8e93; }
     </style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="app-header">
-        <img id="appLogo" src="" alt="Japan Banner" class="app-banner">
+        <img id="appLogo" src="https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg" alt="Logo" class="app-banner">
         <h1>🇯🇵 N5 Typing Master</h1>
     </div>
 
-    <!-- Bộ chọn danh mục & độ khó -->
     <div class="controls" id="controls">
         <select id="categorySelect">
             <option value="all">🔥 Tổng hợp tất cả N5 (Full Kho Từ)</option>
-            <option value="katakana">Chữ cứng Katakana N5 (Mở Rộng)</option>
-            <option value="hiragana">Từ vựng Hiragana N5 (Đầy Đủ)</option>
-            <option value="sentences">Mẫu câu giao tiếp N5</option>
+            <option value="katakana">Chữ cứng Katakana</option>
+            <option value="hiragana">Từ vựng Hiragana</option>
+            <option value="sentences">Mẫu câu giao tiếp</option>
         </select>
         <select id="difficultySelect">
-            <option value="60">Thời gian: Dễ (60 Giây)</option>
-            <option value="45">Thời gian: Trung bình (45 Giây)</option>
-            <option value="30">Thời gian: Khó (30 Giây)</option>
+            <option value="60">Thời gian: 60 Giây</option>
+            <option value="45">Thời gian: 45 Giây</option>
+            <option value="30">Thời gian: 30 Giây</option>
         </select>
     </div>
 
-    <!-- Thanh chỉ số -->
     <div class="stats-bar">
-        <div class="stat-item">
-            <div class="label">Thời gian</div>
-            <div class="value" id="timer">60s</div>
-        </div>
-        <div class="stat-item">
-            <div class="label">Combo</div>
-            <div class="value" id="combo">x0</div>
-        </div>
-        <div class="stat-item">
-            <div class="label">Điểm số</div>
-            <div class="value" id="score">0</div>
-        </div>
+        <div class="stat-item"><div class="label">Thời gian</div><div class="value" id="timer">60s</div></div>
+        <div class="stat-item"><div class="label">Combo</div><div class="value" id="combo">x0</div></div>
+        <div class="stat-item"><div class="label">Điểm số</div><div class="value" id="score">0</div></div>
     </div>
 
-    <!-- Khung gõ bài -->
     <div id="gamePlayArea" class="hidden">
         <div class="card">
-            <img id="targetImage" src="" alt="Illustration" class="word-image">
+            <img id="targetImage" src="" alt="Icon" class="word-image">
             <div class="japanese-text" id="targetText">コーヒー</div>
             <div class="romaji-text" id="targetRomaji">ko-hi-</div>
             <div class="meaning-text" id="targetMeaning">Cà phê</div>
         </div>
 
-        <div class="input-group" style="margin-top: 8px;">
-            <input 
-                type="text" 
-                id="userInput" 
-                placeholder="Gõ bằng bàn phím Nhật..." 
-                autocomplete="off" 
-                autocorrect="off" 
-                autocapitalize="none" 
-                spellcheck="false"
-                data-lpignore="true"
-            >
-            <div class="tip-text">💡 Dùng bàn phím Kana/Romaji Tiếng Nhật để gõ.</div>
+        <div style="margin-top: 10px;">
+            <input type="text" id="userInput" placeholder="Gõ từ tiếng Nhật..." autocomplete="off">
         </div>
     </div>
 
-    <!-- Màn hình kết quả -->
-    <div id="resultArea" class="card result-screen hidden">
-        <img src="https://cdn-icons-png.flaticon.com/512/3112/3112946.png" alt="Trophy" class="result-image">
-        <h2>🎉 KẾT THÚC BÀI THI!</h2>
-        <p>Điểm số: <strong id="finalScore" style="color: var(--primary); font-size: 20px;">0</strong></p>
-        <p>Số từ gõ đúng: <strong id="finalCount">0</strong></p>
-        <div class="grade-badge" id="finalGrade">Rank: S</div>
+    <div id="resultArea" class="card hidden">
+        <h2>🎉 KẾT THÚC!</h2>
+        <div id="rankBadge" class="rank-badge rank-F">F</div>
+        <p style="font-size: 15px; margin-bottom: 5px;">Xếp hạng: <strong id="rankTitle">Tập sự</strong></p>
+        <p>Điểm: <strong id="finalScore" style="color:var(--primary);">0</strong></p>
+        <p>Số từ đúng: <strong id="finalCount">0</strong></p>
     </div>
 
-    <!-- Nút bắt đầu / dừng -->
     <button id="actionBtn">Bắt Đầu Luyện Gõ</button>
 </div>
 
 <script>
-    // 🔴 LOGO BANNER (LINK CỦA BRO)
-    const LOGO_URL = "https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg";
-    document.getElementById('appLogo').src = LOGO_URL;
-
-    // KHO TỪ VỰNG N5 MỞ RỘNG ĐẦY ĐỦ
     const vocabulary = {
         katakana: [
             { text: "コーヒー", romaji: "ko-hi-", meaning: "Cà phê", score: 15, img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" },
@@ -353,16 +240,13 @@
             { text: "ズボン", romaji: "zubon", meaning: "Quần dài", score: 12, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300" },
             { text: "スリッパ", romaji: "surippa", meaning: "Dép đi trong nhà", score: 15, img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=300" },
             { text: "ゼロ", romaji: "zero", meaning: "Số 0", score: 10, img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" },
-            { text: "テープレコーダー", romaji: "te-pureko-da-", meaning: "Máy ghi âm", score: 20, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=300" },
             { text: "テーブル", romaji: "te-buru", meaning: "Bàn ăn", score: 12, img: "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=300" },
             { text: "テスト", romaji: "tesuto", meaning: "Bài kiểm tra", score: 12, img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300" },
             { text: "ハンカチ", romaji: "hankachi", meaning: "Khăn tay", score: 15, img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300" },
             { text: "パーティー", romaji: "pa-ti-", meaning: "Bữa tiệc", score: 15, img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=300" },
             { text: "フォーク", romaji: "fo-ku", meaning: "Dĩa / Nĩa", score: 12, img: "https://images.unsplash.com/photo-1594950195709-a14f66c242d7?w=300" },
-            { text: "フィルム", romaji: "firumu", meaning: "Cuộn phim", score: 15, img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" },
             { text: "プール", romaji: "pu-ru", meaning: "Bể bơi", score: 12, img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=300" },
             { text: "ページ", romaji: "pe-ji", meaning: "Trang sách", score: 10, img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" },
-            { text: "マッチ", romaji: "macchi", meaning: "Bao diêm", score: 12, img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" },
             { text: "ナイフ", romaji: "naifu", meaning: "Con dao", score: 12, img: "https://images.unsplash.com/photo-1594950195709-a14f66c242d7?w=300" },
             { text: "ポケット", romaji: "poketto", meaning: "Túi quần/áo", score: 12, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300" }
         ],
@@ -397,9 +281,7 @@
             { text: "かいしゃ", romaji: "kaisha", meaning: "Công ty", score: 12, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300" },
             { text: "びょういん", romaji: "byouin", meaning: "Bệnh viện", score: 15, img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300" },
             { text: "ぎんこう", romaji: "ginkou", meaning: "Ngân hàng", score: 12, img: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=300" },
-            { text: "ゆうびんきょく", romaji: "yuubinkyoku", meaning: "Bưu điện", score: 18, img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300" },
             { text: "としょかん", romaji: "toshokan", meaning: "Thư viện", score: 15, img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=300" },
-            { text: "えいがかん", romaji: "eigakan", meaning: "Rạp chiếu phim", score: 15, img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" },
             { text: "みせ", romaji: "mise", meaning: "Cửa hàng", score: 10, img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=300" },
             { text: "へや", romaji: "heya", meaning: "Căn phòng", score: 10, img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300" },
             { text: "つくえ", romaji: "tsukue", meaning: "Cái bàn", score: 10, img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=300" },
@@ -409,28 +291,20 @@
             { text: "かばん", romaji: "kaban", meaning: "Cặp / Túi xách", score: 12, img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300" },
             { text: "くつ", romaji: "kutsu", meaning: "Giày", score: 10, img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" },
             { text: "しんぶん", romaji: "shinbun", meaning: "Báo chí", score: 12, img: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" },
-            { text: "ざっし", romaji: "zasshi", meaning: "Tạp chí", score: 12, img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" },
             { text: "じしょ", romaji: "jisho", meaning: "Từ điển", score: 12, img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" },
             { text: "てがみ", romaji: "tegami", meaning: "Lá thư", score: 12, img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300" },
             { text: "しゃしん", romaji: "shashin", meaning: "Bức ảnh", score: 12, img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" },
             { text: "おかね", romaji: "okane", meaning: "Tiền bạc", score: 10, img: "https://images.unsplash.com/photo-1556742049-0a67d10e53a9?w=300" },
             { text: "きっぷ", romaji: "kippu", meaning: "Vé tàu/xe", score: 12, img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300" },
-            { text: "おみやげ", romaji: "omiyage", meaning: "Quà lưu niệm", score: 15, img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=300" },
             { text: "てんき", romaji: "tenki", meaning: "Thời tiết", score: 10, img: "https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=300" },
             { text: "あめ", romaji: "ame", meaning: "Mưa", score: 10, img: "https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=300" },
             { text: "ゆき", romaji: "yuki", meaning: "Tuyết", score: 10, img: "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=300" },
-            { text: "くもり", romaji: "kumori", meaning: "Nhiều mây", score: 12, img: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=300" },
             { text: "うみ", romaji: "umi", meaning: "Biển", score: 10, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" },
             { text: "やま", romaji: "yama", meaning: "Núi", score: 10, img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300" },
-            { text: "川（かわ）", romaji: "kawa", meaning: "Sông", score: 10, img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300" },
-            { text: "そら", romaji: "sora", meaning: "Bầu trời", score: 10, img: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=300" },
             { text: "きょう", romaji: "kyou", meaning: "Hôm nay", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
             { text: "あした", romaji: "ashita", meaning: "Ngày mai", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
             { text: "きのう", romaji: "kinou", meaning: "Hôm qua", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
-            { text: "いま", romaji: "ima", meaning: "Bây giờ", score: 10, img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=300" },
-            { text: "朝（あさ）", romaji: "asa", meaning: "Buổi sáng", score: 10, img: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=300" },
-            { text: "昼（ひる）", romaji: "hiru", meaning: "Buổi trưa", score: 10, img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=300" },
-            { text: "夜（よる）", romaji: "yoru", meaning: "Buổi tối", score: 10, img: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=300" }
+            { text: "いま", romaji: "ima", meaning: "Bây giờ", score: 10, img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=300" }
         ],
         sentences: [
             { text: "わたしはがくせいです。", romaji: "Watashi wa gakusei desu.", meaning: "Tôi là sinh viên.", score: 30, img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300" },
@@ -475,40 +349,28 @@
     const actionBtn = document.getElementById('actionBtn');
 
     actionBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            endGame();
-        } else {
-            startGame();
-        }
+        if (isPlaying) endGame();
+        else startGame();
     });
 
-    userInput.addEventListener('input', (e) => {
-        checkInput(e.target.value);
-    });
+    userInput.addEventListener('input', (e) => checkInput(e.target.value));
 
     function startGame() {
         const cat = categorySelect.value;
         if (cat === 'all') {
-            currentQuestions = [
-                ...vocabulary.katakana,
-                ...vocabulary.hiragana,
-                ...vocabulary.sentences
-            ].sort(() => Math.random() - 0.5);
+            currentQuestions = [...vocabulary.katakana, ...vocabulary.hiragana, ...vocabulary.sentences].sort(() => Math.random() - 0.5);
         } else {
             currentQuestions = [...vocabulary[cat]].sort(() => Math.random() - 0.5);
         }
         
-        currentIndex = 0;
-        score = 0;
-        combo = 0;
-        typedCount = 0;
+        currentIndex = 0; score = 0; combo = 0; typedCount = 0;
         timeRemaining = parseInt(difficultySelect.value);
         isPlaying = true;
 
         controls.classList.add('hidden');
         resultArea.classList.add('hidden');
         gamePlayArea.classList.remove('hidden');
-        actionBtn.textContent = 'Hủy / Dừng Lại';
+        actionBtn.textContent = 'Dừng Lại';
         actionBtn.classList.add('danger');
 
         scoreEl.textContent = '0';
@@ -523,9 +385,7 @@
         timerInterval = setInterval(() => {
             timeRemaining--;
             timerEl.textContent = timeRemaining + 's';
-            if (timeRemaining <= 0) {
-                endGame();
-            }
+            if (timeRemaining <= 0) endGame();
         }, 1000);
     }
 
@@ -544,42 +404,43 @@
     function checkInput(val) {
         if (!isPlaying) return;
         const q = currentQuestions[currentIndex];
-        
         if (val.trim() === q.text) {
-            combo++;
-            typedCount++;
+            combo++; typedCount++;
             score += q.score * combo;
-
             scoreEl.textContent = score;
             comboEl.textContent = 'x' + combo;
             userInput.value = '';
-
             currentIndex++;
             loadQuestion();
         }
     }
 
+    function getRank(score) {
+        if (score >= 1000) return { rank: "S", title: "Thần Đồng Tiếng Nhật 🏆", class: "rank-S" };
+        if (score >= 600)  return { rank: "A", title: "Cao Thủ Luyện Gõ 🔥", class: "rank-A" };
+        if (score >= 350)  return { rank: "B", title: "Tay Gõ Chuyên Nghiệp ✨", class: "rank-B" };
+        if (score >= 180)  return { rank: "C", title: "Đã Quen Tay 👏", class: "rank-C" };
+        if (score >= 80)   return { rank: "D", title: "Người Mới Bắt Đầu 🐣", class: "rank-D" };
+        return { rank: "F", title: "Cần Cố Gắng Thêm 😅", class: "rank-F" };
+    }
+
     function endGame() {
         clearInterval(timerInterval);
         isPlaying = false;
-
         gamePlayArea.classList.add('hidden');
         controls.classList.remove('hidden');
         resultArea.classList.remove('hidden');
 
+        const rankInfo = getRank(score);
+        const rankBadge = document.getElementById('rankBadge');
+        rankBadge.textContent = rankInfo.rank;
+        rankBadge.className = 'rank-badge ' + rankInfo.class;
+        document.getElementById('rankTitle').textContent = rankInfo.title;
+
         document.getElementById('finalScore').textContent = score;
         document.getElementById('finalCount').textContent = typedCount;
-        document.getElementById('finalGrade').textContent = "Rank: " + getGrade(score);
-
-        actionBtn.textContent = 'Luyện Lại Bài Khác';
+        actionBtn.textContent = 'Chơi Lại';
         actionBtn.classList.remove('danger');
-    }
-
-    function getGrade(sc) {
-        if (sc >= 250) return "S (Xuất Sắc)";
-        if (sc >= 150) return "A (Rất Tốt)";
-        if (sc >= 80)  return "B (Khá)";
-        return "C (Cần Cố Gắng)";
     }
 </script>
 </body>
