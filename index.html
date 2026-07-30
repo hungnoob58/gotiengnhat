@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Luyện Gõ N5">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/330/330582.png">
+    <link rel="apple-touch-icon" href="https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg>
 
     <style>
         :root {
@@ -240,17 +240,17 @@
 
 <div class="app-container">
     <div class="app-header">
-        <img src="https://www.google.com/imgres?q=nano%20ai%20100%20girlfriend&imgurl=https%3A%2F%2Fi0.wp.com%2Fanitrendz.net%2Fnews%2Fwp-content%2Fuploads%2F2023%2F11%2Fthe100girlfriendswhoreallyloveyou_nanoheroinevisual.jpg%3Fssl%3D1&imgrefurl=https%3A%2F%2Fanitrendz.net%2Fnews%2F2023%2F11%2F05%2Fthe-100-girlfriends-who-really-love-you-releases-nano-eiai-heroine-visual%2F&docid=eNQKHd9SUkP-2M&tbnid=M7I1LcHfBK7C7M&vet=12ahUKEwjSu5vvpPqVAxWZQfUHHdt2GJYQnPAOegQIHRAB..i&w=1000&h=1415&hcb=2&ved=2ahUKEwjSu5vvpPqVAxWZQfUHHdt2GJYQnPAOegQIHRAB">
+        <img id="appLogo" src="" alt="Japan Banner" class="app-banner">
         <h1>🇯🇵 N5 Typing Master</h1>
     </div>
 
     <!-- Bộ chọn danh mục & độ khó -->
     <div class="controls" id="controls">
         <select id="categorySelect">
-            <option value="all">🔥 Tổng hợp tất cả N5 (Full Bộ)</option>
-            <option value="katakana">Chữ cứng Katakana N5</option>
-            <option value="hiragana">Từ vựng Hiragana N5</option>
-            <option value="sentences">Mẫu câu tự luận N5</option>
+            <option value="all">🔥 Tổng hợp tất cả N5 (Full Kho Từ)</option>
+            <option value="katakana">Chữ cứng Katakana N5 (Mở Rộng)</option>
+            <option value="hiragana">Từ vựng Hiragana N5 (Đầy Đủ)</option>
+            <option value="sentences">Mẫu câu giao tiếp N5</option>
         </select>
         <select id="difficultySelect">
             <option value="60">Thời gian: Dễ (60 Giây)</option>
@@ -285,7 +285,6 @@
         </div>
 
         <div class="input-group" style="margin-top: 8px;">
-            <!-- ĐÃ CHỈNH SỬA TẮT TỰ ĐỘNG LƯU / DỰ ĐOÁN TỪ CỦA BÀN PHÍM -->
             <input 
                 type="text" 
                 id="userInput" 
@@ -314,7 +313,11 @@
 </div>
 
 <script>
-    // FULL BỘ TỪ VỰNG CHUẨN JLPT N5
+    // 🔴 LOGO BANNER (LINK CỦA BRO)
+    const LOGO_URL = "https://cdn.phototourl.com/free/2026-07-30-ae9f6bed-e540-420f-b5e5-3cad19731ab0.jpg";
+    document.getElementById('appLogo').src = LOGO_URL;
+
+    // KHO TỪ VỰNG N5 MỞ RỘNG ĐẦY ĐỦ
     const vocabulary = {
         katakana: [
             { text: "コーヒー", romaji: "ko-hi-", meaning: "Cà phê", score: 15, img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" },
@@ -328,15 +331,40 @@
             { text: "ラジオ", romaji: "rajio", meaning: "Đài Radio", score: 10, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=300" },
             { text: "デパート", romaji: "depa-to", meaning: "Bách hóa tổng hợp", score: 15, img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=300" },
             { text: "レストラン", romaji: "resutoran", meaning: "Nhà hàng", score: 15, img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300" },
-            { text: "ビル", romaji: "biru", meaning: "Tòa nhà cao tầng", score: 10, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300" },
+            { text: "ビル", romaji: "biru", meaning: "Tòa nhà", score: 10, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300" },
             { text: "ニュース", romaji: "nyu-su", meaning: "Tin tức", score: 15, img: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" },
             { text: "ドア", romaji: "doa", meaning: "Cửa chính", score: 10, img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300" },
             { text: "ベッド", romaji: "beddo", meaning: "Giường ngủ", score: 12, img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=300" },
             { text: "シャツ", romaji: "shatsu", meaning: "Áo sơ mi", score: 12, img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300" },
             { text: "ネクタイ", romaji: "nekutai", meaning: "Cà vạt", score: 15, img: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=300" },
-            { text: "ノート", romaji: "no-to", meaning: "Vở / Sổ tay", score: 10, img: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=300" },
+            { text: "ノート", romaji: "no-to", meaning: "Sổ tay / Tập vở", score: 10, img: "https://images.unsplash.com/photo-1517842645767-c639042777db?w=300" },
             { text: "ボールペン", romaji: "bo-rupen", meaning: "Bút bi", score: 15, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=300" },
-            { text: "トイレ", romaji: "toire", meaning: "Nhà vệ sinh", score: 10, img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=300" }
+            { text: "トイレ", romaji: "toire", meaning: "Nhà vệ sinh", score: 10, img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=300" },
+            { text: "エアコン", romaji: "eakon", meaning: "Điều hòa", score: 15, img: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=300" },
+            { text: "エレベーター", romaji: "erebe-ta-", meaning: "Thang máy", score: 18, img: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=300" },
+            { text: "エスカレーター", romaji: "esukare-ta-", meaning: "Thang cuốn", score: 18, img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300" },
+            { text: "カップ", romaji: "kappu", meaning: "Cái cốc/tách", score: 12, img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=300" },
+            { text: "カレンダー", romaji: "karenda-", meaning: "Lịch", score: 15, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
+            { text: "ギター", romaji: "gita-", meaning: "Đàn guitar", score: 12, img: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=300" },
+            { text: "クラス", romaji: "kurasu", meaning: "Lớp học", score: 12, img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300" },
+            { text: "シャワー", romaji: "shawa-", meaning: "Vòi hoa sen", score: 12, img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=300" },
+            { text: "スプーン", romaji: "supu-n", meaning: "Thìa / Muỗng", score: 12, img: "https://images.unsplash.com/photo-1594950195709-a14f66c242d7?w=300" },
+            { text: "スポーツ", romaji: "supo-tsu", meaning: "Thể thao", score: 15, img: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=300" },
+            { text: "ズボン", romaji: "zubon", meaning: "Quần dài", score: 12, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300" },
+            { text: "スリッパ", romaji: "surippa", meaning: "Dép đi trong nhà", score: 15, img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=300" },
+            { text: "ゼロ", romaji: "zero", meaning: "Số 0", score: 10, img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300" },
+            { text: "テープレコーダー", romaji: "te-pureko-da-", meaning: "Máy ghi âm", score: 20, img: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=300" },
+            { text: "テーブル", romaji: "te-buru", meaning: "Bàn ăn", score: 12, img: "https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?w=300" },
+            { text: "テスト", romaji: "tesuto", meaning: "Bài kiểm tra", score: 12, img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300" },
+            { text: "ハンカチ", romaji: "hankachi", meaning: "Khăn tay", score: 15, img: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=300" },
+            { text: "パーティー", romaji: "pa-ti-", meaning: "Bữa tiệc", score: 15, img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=300" },
+            { text: "フォーク", romaji: "fo-ku", meaning: "Dĩa / Nĩa", score: 12, img: "https://images.unsplash.com/photo-1594950195709-a14f66c242d7?w=300" },
+            { text: "フィルム", romaji: "firumu", meaning: "Cuộn phim", score: 15, img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" },
+            { text: "プール", romaji: "pu-ru", meaning: "Bể bơi", score: 12, img: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=300" },
+            { text: "ページ", romaji: "pe-ji", meaning: "Trang sách", score: 10, img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" },
+            { text: "マッチ", romaji: "macchi", meaning: "Bao diêm", score: 12, img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300" },
+            { text: "ナイフ", romaji: "naifu", meaning: "Con dao", score: 12, img: "https://images.unsplash.com/photo-1594950195709-a14f66c242d7?w=300" },
+            { text: "ポケット", romaji: "poketto", meaning: "Túi quần/áo", score: 12, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300" }
         ],
         hiragana: [
             { text: "わたし", romaji: "watashi", meaning: "Tôi", score: 10, img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" },
@@ -358,7 +386,51 @@
             { text: "やさい", romaji: "yasai", meaning: "Rau", score: 12, img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300" },
             { text: "くだもの", romaji: "kudamono", meaning: "Hoa quả", score: 15, img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=300" },
             { text: "ともだち", romaji: "tomodachi", meaning: "Bạn bè", score: 15, img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=300" },
-            { text: "かぞく", romaji: "kazoku", meaning: "Gia đình", score: 12, img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=300" }
+            { text: "かぞく", romaji: "kazoku", meaning: "Gia đình", score: 12, img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=300" },
+            { text: "いぬ", romaji: "inu", meaning: "Con chó", score: 10, img: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=300" },
+            { text: "ねこ", romaji: "neko", meaning: "Con mèo", score: 10, img: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=300" },
+            { text: "くるま", romaji: "kuruma", meaning: "Xe ô tô", score: 10, img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=300" },
+            { text: "でんしゃ", romaji: "densha", meaning: "Tàu điện", score: 12, img: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=300" },
+            { text: "ひこうき", romaji: "hikouki", meaning: "Máy bay", score: 12, img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=300" },
+            { text: "うち", romaji: "uchi", meaning: "Nhà", score: 10, img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300" },
+            { text: "がっこう", romaji: "gakkou", meaning: "Trường học", score: 12, img: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=300" },
+            { text: "かいしゃ", romaji: "kaisha", meaning: "Công ty", score: 12, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=300" },
+            { text: "びょういん", romaji: "byouin", meaning: "Bệnh viện", score: 15, img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=300" },
+            { text: "ぎんこう", romaji: "ginkou", meaning: "Ngân hàng", score: 12, img: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=300" },
+            { text: "ゆうびんきょく", romaji: "yuubinkyoku", meaning: "Bưu điện", score: 18, img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300" },
+            { text: "としょかん", romaji: "toshokan", meaning: "Thư viện", score: 15, img: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=300" },
+            { text: "えいがかん", romaji: "eigakan", meaning: "Rạp chiếu phim", score: 15, img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=300" },
+            { text: "みせ", romaji: "mise", meaning: "Cửa hàng", score: 10, img: "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=300" },
+            { text: "へや", romaji: "heya", meaning: "Căn phòng", score: 10, img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=300" },
+            { text: "つくえ", romaji: "tsukue", meaning: "Cái bàn", score: 10, img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=300" },
+            { text: "いす", romaji: "isu", meaning: "Cái ghế", score: 10, img: "https://images.unsplash.com/photo-1503602642458-232111445657?w=300" },
+            { text: "とけい", romaji: "tokei", meaning: "Đồng hồ", score: 10, img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=300" },
+            { text: "かさ", romaji: "kasa", meaning: "Cái ô/dù", score: 10, img: "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?w=300" },
+            { text: "かばん", romaji: "kaban", meaning: "Cặp / Túi xách", score: 12, img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300" },
+            { text: "くつ", romaji: "kutsu", meaning: "Giày", score: 10, img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" },
+            { text: "しんぶん", romaji: "shinbun", meaning: "Báo chí", score: 12, img: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=300" },
+            { text: "ざっし", romaji: "zasshi", meaning: "Tạp chí", score: 12, img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300" },
+            { text: "じしょ", romaji: "jisho", meaning: "Từ điển", score: 12, img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" },
+            { text: "てがみ", romaji: "tegami", meaning: "Lá thư", score: 12, img: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=300" },
+            { text: "しゃしん", romaji: "shashin", meaning: "Bức ảnh", score: 12, img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" },
+            { text: "おかね", romaji: "okane", meaning: "Tiền bạc", score: 10, img: "https://images.unsplash.com/photo-1556742049-0a67d10e53a9?w=300" },
+            { text: "きっぷ", romaji: "kippu", meaning: "Vé tàu/xe", score: 12, img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300" },
+            { text: "おみやげ", romaji: "omiyage", meaning: "Quà lưu niệm", score: 15, img: "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=300" },
+            { text: "てんき", romaji: "tenki", meaning: "Thời tiết", score: 10, img: "https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=300" },
+            { text: "あめ", romaji: "ame", meaning: "Mưa", score: 10, img: "https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=300" },
+            { text: "ゆき", romaji: "yuki", meaning: "Tuyết", score: 10, img: "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?w=300" },
+            { text: "くもり", romaji: "kumori", meaning: "Nhiều mây", score: 12, img: "https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=300" },
+            { text: "うみ", romaji: "umi", meaning: "Biển", score: 10, img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=300" },
+            { text: "やま", romaji: "yama", meaning: "Núi", score: 10, img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=300" },
+            { text: "川（かわ）", romaji: "kawa", meaning: "Sông", score: 10, img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=300" },
+            { text: "そら", romaji: "sora", meaning: "Bầu trời", score: 10, img: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=300" },
+            { text: "きょう", romaji: "kyou", meaning: "Hôm nay", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
+            { text: "あした", romaji: "ashita", meaning: "Ngày mai", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
+            { text: "きのう", romaji: "kinou", meaning: "Hôm qua", score: 10, img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=300" },
+            { text: "いま", romaji: "ima", meaning: "Bây giờ", score: 10, img: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=300" },
+            { text: "朝（あさ）", romaji: "asa", meaning: "Buổi sáng", score: 10, img: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?w=300" },
+            { text: "昼（ひる）", romaji: "hiru", meaning: "Buổi trưa", score: 10, img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=300" },
+            { text: "夜（よる）", romaji: "yoru", meaning: "Buổi tối", score: 10, img: "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=300" }
         ],
         sentences: [
             { text: "わたしはがくせいです。", romaji: "Watashi wa gakusei desu.", meaning: "Tôi là sinh viên.", score: 30, img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300" },
@@ -370,7 +442,11 @@
             { text: "どこへいきますか。", romaji: "Doko he ikimasu ka.", meaning: "Bạn đi đâu đấy?", score: 30, img: "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=300" },
             { text: "すみません、トイレはどこですか。", romaji: "Sumimasen, toire wa doko desu ka.", meaning: "Xin lỗi, nhà vệ sinh ở đâu?", score: 40, img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=300" },
             { text: "はじめまして、どうぞよろしく。", romaji: "Hajimemashite, douzo yoroshiku.", meaning: "Rất hân hạnh được làm quen.", score: 40, img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=300" },
-            { text: "ありがとうごさいます。", romaji: "Arigatou gozaimasu.", meaning: "Xin cảm ơn bạn rất nhiều.", score: 35, img: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=300" }
+            { text: "ありがとうごさいます。", romaji: "Arigatou gozaimasu.", meaning: "Xin cảm ơn bạn rất nhiều.", score: 35, img: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=300" },
+            { text: "ごはんをたべます。", romaji: "Gohan wo tabemasu.", meaning: "Tôi ăn cơm.", score: 25, img: "https://images.unsplash.com/photo-1536304993881-ff6e90fc0a65?w=300" },
+            { text: "おちゃをのみます。", romaji: "Ocha wo nomimasu.", meaning: "Tôi uống trà.", score: 25, img: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=300" },
+            { text: "とうきょうへいきます。", romaji: "Toukyou he ikimasu.", meaning: "Tôi đi Tokyo.", score: 30, img: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?w=300" },
+            { text: "きのうほんをよみました。", romaji: "Kinou hon wo yomimashita.", meaning: "Hôm qua tôi đã đọc sách.", score: 35, img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=300" }
         ]
     };
 
